@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import dotenv from 'dotenv';
 import projectRoutes from './routes/projects'
 import taskRoutes from './routes/task'
+import userRoutes from './routes/users'
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/projects', projectRoutes)
 app.use('/api/tasks', taskRoutes)
+app.use('/api/users', userRoutes)
+
 
 app.listen(PORT, () => {
   console.log("server is running on port", PORT);
